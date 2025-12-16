@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: os-html-deployment
+  labels:
+    app: os-html
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: os-html
+  template:
+    metadata:
+      labels:
+        app: os-html
+    spec:
+      containers:
+      - name: os-nginx-container
+        image: hebaa3/os-html-app:v1
+        ports:
+        - containerPort: 80

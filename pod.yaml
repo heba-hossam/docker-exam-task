@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-os-pod
+  labels:
+    app: os-html
+spec:
+  containers:
+  - name: os-nginx-container
+    image: hebaa3/os-html-app:v1
+    ports:
+    - containerPort: 80
